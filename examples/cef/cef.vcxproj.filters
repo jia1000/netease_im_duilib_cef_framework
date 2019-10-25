@@ -30,6 +30,12 @@
     <ClInclude Include="CEF_form.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="client_xml_request_resource_handler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientSchemeHandler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,5 +60,8 @@
     <Image Include="CEF.ico">
       <Filter>资源文件</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

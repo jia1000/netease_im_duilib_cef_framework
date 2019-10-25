@@ -5,6 +5,9 @@
 #include "main.h"
 #include "cef_form.h"
 
+//#include "ClientSchemeHandler.h"
+#include "client_xml_request_resource_handler.h"
+
 enum ThreadId
 {
 	kThreadUI
@@ -34,6 +37,15 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	{
 		return 0;
 	}
+
+    // 使用XMLHttpRequest进行交互：第1步：注册Scheme
+    CefRegisterSchemeHandlerFactory("http", "image_controller", new ClientXMLRequestSchemeHandlerFactory());
+
+#if _DEBUG
+    AllocConsole();
+    freopen("CONOUT$", "w+t", stdout);
+    printf("test console");
+#endif
 
 	// 创建主线程
 	MainThread thread;

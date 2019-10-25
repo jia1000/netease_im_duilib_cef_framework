@@ -61,8 +61,11 @@ void CefForm::InitWindow()
 	// 打开开发者工具
 	cef_control_->AttachDevTools(cef_control_dev_);
 
-	// 加载皮肤目录下的 html 文件
-	cef_control_->LoadURL(nbase::win32::GetCurrentModuleDirectory() + L"resources\\themes\\default\\cef\\cef.html");
+	// 加载皮肤目录下的 html 文件 
+	//cef_control_->LoadURL(nbase::win32::GetCurrentModuleDirectory() + L"resources\\themes\\default\\cef\\cef.html");
+    cef_control_->LoadURL("http://172.16.11.134:8080/home");// web 联调用
+    //cef_control_->LoadURL("http://127.0.0.1:8080/cta_multi.html");
+
 
 	if (!nim_comp::CefManager::GetInstance()->IsEnableOffsetRender())
 		cef_control_dev_->SetVisible(false);
